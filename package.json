@@ -1,0 +1,49 @@
+{
+  "name": "gulp-livescript-istanbul",
+  "version": "0.0.1",
+  "description": "Istanbul livescript & js unit test coverage plugin for gulp ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.ls --compilers ls:livescript",
+    "coverage": "istanbul cover _mocha -- test/index.ls --compilers ls:livescript",
+    "coveralls": "istanbul cover _mocha -- test/index.ls --compilers ls:livescript  && cat coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/furqanZafar/gulp-livescript-istanbul.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulp-plugin",
+    "js",
+    "ls",
+    "livescript",
+    "coverage",
+    "istanbul",
+    "unit test"
+  ],
+  "author": "Furqan Zafar",
+  "bugs": {
+    "url": "https://github.com/furqanZafar/gulp-livescript-istanbul/issues"
+  },
+  "homepage": "https://github.com/furqanZafar/gulp-livescript-istanbul#readme",
+  "dependencies": {
+    "cli-color": "^1.0.0",
+    "gulp": "^3.9.0",
+    "istanbul": "^0.3.21",
+    "livescript": "^1.4.0",
+    "prelude-ls": "^1.1.2",
+    "source-map": "^0.5.1",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "gulp-exit": "0.0.2",
+    "gulp-livescript": "^2.4.0",
+    "gulp-mocha": "^2.1.3",
+    "gulp-util": "^3.0.6",
+    "mocha": "^2.3.3",
+    "mocha-lcov-reporter": "^1.0.0",
+    "rimraf": "^2.4.3"
+  }
+}

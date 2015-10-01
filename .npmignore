@@ -1,0 +1,8 @@
+.DS_Store
+.gitignore
+coverage/
+npm-debug.log
+rough
+*.ls
+*.sublime-project
+*.sublime-workspace
