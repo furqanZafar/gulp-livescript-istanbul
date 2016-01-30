@@ -1,6 +1,6 @@
 {
   "name": "gulp-livescript-istanbul",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Istanbul livescript & js unit test coverage plugin for gulp ",
   "main": "index.js",
   "scripts": {

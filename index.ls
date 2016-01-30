@@ -103,6 +103,7 @@ module.exports = ->
                     (path) -> !!(instrument-code path)
                     (code, path) -> (instrument-code path).instrumented-code
                     extensions: <[.js .ls]>
+                    
                 callback!
 
     # must be called after running unit tests
