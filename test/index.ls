@@ -7,6 +7,7 @@ require! \gulp-util
 gulp-livescript-istanbul = (require \../index)
 require! \path
 require! \rimraf
+through = (require! \through2).obj
 
 describe "gulp-livescript-istanbul", ->
 
@@ -38,6 +39,15 @@ describe "gulp-livescript-istanbul", ->
                     add-after-hook = require \./fixtures/calculator
                     assert.not-equal add-before-hook, add-after-hook
                     done!
+            stream.write @test-file
+            stream.end!
+
+        specify "must forward its finish event", (done) ->
+            {hook-require} = gulp-livescript-istanbul!
+            stream = hook-require!
+                ..pipe through do
+                    (f, e, callback) -> callback!
+                    -> done!
             stream.write @test-file
             stream.end!
 

@@ -95,7 +95,7 @@ module.exports = ->
             (file, encoding, callback) ->
                 delete require.cache[path.resolve file.path]
                 callback null, file
-            ->
+            (callback) !->
                 hook.unhook-require!
                 
                 # hook-require :: (String -> Boolean) -> (String -> String -> String) -> object -> ?
@@ -103,6 +103,7 @@ module.exports = ->
                     (path) -> !!(instrument-code path)
                     (code, path) -> (instrument-code path).instrumented-code
                     extensions: <[.js .ls]>
+                callback!
 
     # must be called after running unit tests
     # ReportName :: String
